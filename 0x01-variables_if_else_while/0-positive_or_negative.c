@@ -2,11 +2,15 @@
 
 #include <time.h>
 
-/* more headers goes there */
+#include <stdio.h>
 
 
 
-/* betty style doc for function main goes there */
+/**
+ * main -print a number if is postive zero or negative
+ *
+ * Return: Always (Success)
+ */
 
 int main(void)
 
@@ -19,13 +23,17 @@ int main(void)
 	srand(time(0));
 
 	n = rand() - RAND_MAX / 2;
-
 	if (n > 0)
-		printf("%d is postive\n", n);
+	{
+		printf("%d is a postive\n", n);
+	}
 	else if (n < 0)
-		printf("%d is negative\n", n);
+	{
+		printf("%d is a negative\n", n);
+	}
 	else
-		printf("%d is zero\n", n);
+
+		printf("%d is a zero\n", n);
 
 	return (0);
 

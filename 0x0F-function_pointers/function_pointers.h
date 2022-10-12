@@ -12,3 +12,7 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+void array_iterator(int *array, size_t size, void (*action)(int));
+int int_index(int *array, int size, int (*cmp)(int));
+
+

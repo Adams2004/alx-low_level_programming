@@ -2,45 +2,33 @@
 #include <stdlib.h>
 
 /**
- * main - prints the opcode of it self
+ * main - program that prints the opcodes of its own main function
  *
- * @argc: number of arguments passed to main.
- * @argv: argument vertor
+ * @argc: count of args
+ * @argv: array of args
  *
- * Return: Always 0 (success).
+ * Return: int
  */
-int main(int argc, char *argv[])
+
+int main(int argc, char **argv)
 {
-    int number_of_bytes, i;
-    char *c = (char *) main;
-    
-    if (argc > 2 || argc == 1)
-    {
-        printf("Error\n");
-        exit(1);
-    }
-    if (number_of_bytes < 0)
-    {
-        printf("Error\n");
-        exit(2);
-    }
-    number_of_bytes = atoi(argv[1]);
+	int i, bytes;
+	char *addr;
 
-    i = 0;
-    while (i < number_of_bytes)
-    {
-        /*if (c[i] >= 'A' && c[i] <= 'Z')
-        {
-            c[i] = c[i] + 32; 
-        }*/
-        printf("%02x", c[i] & 0xFF);
-        if (i != (number_of_bytes - 1))
-        {
-            printf(", ");
-        }
-        i++;
-    }
-    printf("\n");
-
-    return (0);
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
+	bytes = atoi(argv[1]);
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+	addr = (char *)main;
+	for (i = 0; i < bytes - 1; i++)
+		printf("%02hhx ", addr[i]);
+	printf("%02hhx\n", addr[i]);
+	return (0);
 }

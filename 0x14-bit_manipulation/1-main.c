@@ -6,17 +6,17 @@
  *
  * Return: Always 0.
  */
-int main(void)
+char main(void)
 {
-	print_binary(0);
-	printf("\n");
-	print_binary(1);
-	printf("\n");
-	print_binary(98);
-	printf("\n");
-	print_binary(1024);
-	printf("\n");
+	print_binary('0');
+	putchar('\n');
+	print_binary('1');
+	putchar('\n');
+	print_binary('98');
+	putchar('\n');
+	print_binary('1024');
+	putchar('\n');
 	print_binary((1 << 10) + 1);
-	printf("\n");
-	return (0);
+	putchar('\n');
+	return 0;
 }
